@@ -406,13 +406,17 @@ apt install figlet
 clear
 printf "\033[93m [√] Creating shortcut.....\n\n"
 termux-setup-storage
+cd ~/TBasic
 mkdir Results
 echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/TB
 echo "cd ~/TBasic-Test" >> $PREFIX/bin/TB
 echo "bash TBasic.sh" >> $PREFIX/bin/TB
 chmod 777 $PREFIX/bin/TB
-clear
+#cho "You can use :- TB "
+
+
 printf "\n\n\033[2;96m Now you can use this command\033[0m\033[92m TB\n\n"
+read
 fi
 lal="\033[31m"
 hara="\033[92m"

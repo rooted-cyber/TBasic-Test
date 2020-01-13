@@ -45,7 +45,6 @@ exit 0
 wrong2 () {
 	printf "\n\n \033[91m [×] Your answer is wrong.\n\n"
 	echo "wrong" >> ~/TBasic-Test/Results/wrong2
-	cd /sdcard
 	rm -f wrong3 > /dev/null 2>&1
 	rm -f wrong4 > /dev/null 2>&1
 	rm -f wrong5 > /dev/null 2>&1
@@ -63,7 +62,6 @@ wrong2 () {
 	}
 	wrong3 () {
 	printf "\n\n \033[91m [×] Your answer is wrong.\n\n"
-	cd /sdcard
 	echo "wrong" >> ~/TBasic-Test/Results/wrong3
 	rm -f wrong2 > /dev/null 2>&1
 	#rm -f wrong3 > /dev/null 2>&1
@@ -221,13 +219,15 @@ Right () {
 	l="printf"
 	$l "\n\n$hara [√] Your answer is correct\n\n"
 	$l "\n"
-	sleep 2
+	sleep 0.70
 	}
 	sawal2 () {
-		printf "\n 2)Termux me koi v file copy kon se command se krte hai?
+		clear
+		printf "\n [ 2 ] Termux me koi v file copy kon se command se krte hai?
 		\033[0m
-		 a)mv	b)cy
-		 c)cp	d)koi nhi\n"
+		
+		 a)mv			b)cd
+		 c)cp			d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -240,10 +240,12 @@ Right () {
 		 esac
 		 }
 		 sawal3 () {
-		printf "\n 3)Termux me kon sa command se tool install hota hai?
+		 	clear
+		printf "\n [ 3 ] Termux me kon sa command se tool install hota hai?
 		\033[0m
-		 a)tool	b)install
-		 c)git	d)koi nhi\n"
+		
+		 a)tool		 	b)install
+		 c)git clone		d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -256,26 +258,29 @@ Right () {
 		 esac
 		 }
 		 sawal4 () {
-		printf "\n 4)Termux me koi v file  internal storage me copy krne pr permission denied likhta hai usko kon sa command se hate hai?
+		 	clear
+		printf "\n [ 4 ] Termux me koi v file  internal storage me copy krne pr permission denied likhta hai usko kon sa command se hate hai?
 		\033[0m
-		 a)solve	b)termux-setup-storage
-		 c)setup-storage	d)koi nhi\n"
-		 printf "\033[96m\n%s Type your answer :- "
+
+a)termux-setup-storage				b)storage
+c)setup-storage					d)cd\n"
+	     printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
-		 A|a)wrong4 ;;
-		 b|B)Right
+		 A|a)Right
 		 sawal5 ;;
+		 b|B)wrong4 ;;
 		 c|C)wrong4 ;;
 		 d|D)wrong4 ;;
 		 *)sawal4 ;;
 		 esac
 		 }
 		 sawal5 () {
-		printf "\n 5)Termux me koi v folder me jane ke liye kon sa command use hota h?
+		 	clear
+		printf "\n [ 5 ] Termux me koi v folder me jane ke liye kon sa command use hota h?
 		\033[0m
-		 a)cd	b)folder
-		 c)go	d)koi nhi\n"
+		 a)cd			b)folder
+		 c)go			d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -288,10 +293,12 @@ Right () {
 		 esac
 		 }
 		 sawal6 () {
-		printf "\n 6)Termux me koi v file move kon sa command se hota h?
+		 	clear
+		printf "\n [ 6 ] Termux me koi v file move kon sa command se hota h?
 		\033[0m
-		 a)file	b)apt
-		 c)mv	d)koi nhi\n"
+		
+		 a)file			b)apt
+		 c)mv			d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -304,10 +311,11 @@ Right () {
 		 esac
 		 }
 		 sawal7 () {
-		printf "\n 7)Termux me koi v folder kon sa command se bnta hai?
+		 	clear
+		printf "\n [ 7 ] Termux me koi v folder kon sa command se bnta hai?
 		\033[0m
-		 a)folder	b)mkdir
-		 c)dir	d)koi nhi\n"
+		 a)folder		b)mkdir
+		 c)dir			d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -320,10 +328,12 @@ Right () {
 		 esac
 		 }
 		  sawal8 () {
-		printf "\n 8)Termux me koi v filE bnane ka commAnd kya hai?
+		  	clear
+		printf "\n [ 8 ] Termux me koi v filE bnane ka commAnd kya hai?
 		\033[0m
-		 a)touch	b)file
-		 c)create	d)koi nhi\n"
+		
+		 a)touch			b)file
+		 c)create			d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -336,10 +346,11 @@ Right () {
 		 esac
 		 }
 		 sawal9 () {
-		printf "\n 9)Termux me koi v file delete krne ke liye kaun sa command use hota hai?
+		 	clear
+		printf "\n [ 9 ] Termux me koi v file delete krne ke liye kaun sa command use hota hai?
 		\033[0m
-		 a)file	b)delete
-		 c)rm	d)koi nhi\n"
+		 a)file			b)delete
+		 c)rm			d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -352,10 +363,11 @@ Right () {
 		 esac
 		 }
 		 sawal10 () {
-		printf "\n 10)Termux me .sh file kaise run krte hai?
+		 	clear
+		printf "\n [ 10 ] Termux me .sh file kaise run krte hai?
 		\033[0m
-		 a)bash	b)sh
-		 c)a or b	d)koi nhi\n"
+		 a)bash				b)sh
+		 c)a or b			d)koi nhi\n"
 		 printf "\033[96m\n%s Type your answer :- "
 		 read b
 		 case $b in
@@ -373,16 +385,18 @@ Right () {
 		 
 
 TBasic-Test () {
+	clear
 	lal="\033[31m"
 hara="\033[92m"
 bulu="\033[34m"
 ajib="\033[96m"
 pta="\033[35m"
 l="echo -e"
-$l "$hara 1)Termux me koi v package install kon sa command se karte hai?
+$l "$hara [ 1 ] Termux me koi v package install kon sa command se karte hai?
 \033[0m
- a)package	b)pkg
- c)install	d)Koi v nhi"
+
+ a)cp				b)pkg
+ c)install			d)Koi v nhi"
 printf "\033[96m\n%s Type your answer :- "
 read ab
 case $ab in

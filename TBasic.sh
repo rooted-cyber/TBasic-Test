@@ -420,7 +420,7 @@ apt install figlet
 clear
 printf "\033[93m [√] Creating shortcut.....\n\n"
 termux-setup-storage
-cd ~/TBasic
+cd ~/TBasic-Test
 mkdir Results
 echo "#!/data/data/com.termux/files/usr/bin/sh" >> $PREFIX/bin/TB
 echo "cd ~/TBasic-Test" >> $PREFIX/bin/TB
